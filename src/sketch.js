@@ -8,27 +8,27 @@ let font
  * Lifecycle
  */
 
-function preload() {
+export function preload() {
   font = loadFont('assets/Akrobat-Bold.otf')
 }
 
-function setup(state) {
+export function setup(state) {
   createCanvas(windowWidth, windowHeight, WEBGL)
   state = {
     fps: 0
   }
 }
 
-function update(state) {
+export function update(state) {
   state.fps = round(frameRate())
 }
 
-function draw(state) {
+export function draw(state) {
   background(50)
   drawFPS(state)
 }
 
-function windowResized() {
+export function windowResized() {
   resizeCanvas(windowWidth, windowHeight)
 }
 
@@ -43,5 +43,3 @@ function drawFPS(state) {
   let y = -height / 2 + 20
   text(`FPS: ${state.fps}`, x, y)
 }
-
-export { preload, setup, update, draw, windowResized }
