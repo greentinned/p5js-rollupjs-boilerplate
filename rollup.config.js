@@ -2,6 +2,8 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import { uglify } from 'rollup-plugin-uglify'
 import livereload from 'rollup-plugin-livereload'
+import copy from 'rollup-plugin-copy-assets'
+import serve from 'rollup-plugin-serve'
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -15,9 +17,16 @@ export default {
     sourcemap: true
   },
   plugins: [
+    copy({
+      assets: ['./src/assets']
+    }),
     resolve(), // tells Rollup how to find date-fns in node_modules
     commonjs(), // converts date-fns to ES modules
-    livereload(),
-    production && uglify() // minify, but only in production
+    production && uglify(), // minify, but only in production
+    serve({
+      contentBase: 'public',
+      port: 3000
+    }),
+    livereload()
   ]
 }

@@ -1,13 +1,25 @@
 import 'p5'
+import { preload, setup, update, draw, windowResized } from './sketch'
+
+/**
+ * Global
+ */
+
+let state = {}
+
+/**
+ * Lifecycle
+ */
+
+window.preload = preload
 
 window.setup = () => {
-  createCanvas(windowWidth, windowHeight, WEBGL)
+  setup(state)
 }
 
 window.draw = () => {
-  background(51)
+  update(state)
+  draw(state)
 }
 
-window.windowResized = () => {
-  resizeCanvas(windowWidth, windowHeight)
-}
+window.windowResized = windowResized
