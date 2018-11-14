@@ -22,4 +22,6 @@ window.draw = () => {
   draw(state)
 }
 
-window.windowResized = windowResized
+window.windowResized = () => {
+  windowResized(state)
+}

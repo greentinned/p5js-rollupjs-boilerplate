@@ -28,7 +28,7 @@ export function draw(state) {
   drawFPS(state)
 }
 
-export function windowResized() {
+export function windowResized(state) {
   resizeCanvas(windowWidth, windowHeight)
 }
 
