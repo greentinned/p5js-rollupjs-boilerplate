@@ -15,6 +15,6 @@
     "dev": "rollup -c -w",
     "build": "rollup -c",
     "start": "serve public",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d public"
   }
 }
