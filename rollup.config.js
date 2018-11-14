@@ -18,7 +18,7 @@ export default {
   },
   plugins: [
     copy({
-      assets: ['./src/assets']
+      assets: ['./src/assets', './src/index.html']
     }),
     resolve(), // tells Rollup how to find date-fns in node_modules
     commonjs(), // converts date-fns to ES modules

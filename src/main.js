@@ -2,7 +2,7 @@ import 'p5'
 import { preload, setup, update, draw, windowResized } from './sketch'
 
 /**
- * Global
+ * State
  */
 
 let state = {}
